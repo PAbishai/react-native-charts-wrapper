@@ -14,6 +14,7 @@ import com.github.mikephil.charting.formatter.LargeValueFormatter;
 import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.wuxudong.rncharts.charts.CustomFormatter;
 import com.github.wuxudong.rncharts.charts.DateFormatter;
+import com.github.wuxudong.rncharts.charts.DisableNilValueFormatter;
 import com.github.wuxudong.rncharts.charts.IndexValueFormatter;
 
 import android.graphics.Typeface;
@@ -66,6 +67,8 @@ public class ChartDataSetConfigUtils {
                 dataSet.setValueFormatter(new LargeValueFormatter());
             } else if ("percent".equals(valueFormatter)) {
                 dataSet.setValueFormatter(new PercentFormatter());
+            } else if ("disableNilValues".equals(valueFormatter)) {
+                dataSet.setValueFormatter(new DisableNilValueFormatter());
             } else if ("date".equals(valueFormatter)) {
                 String valueFormatterPattern = config.getString("valueFormatterPattern");
 
